@@ -6,6 +6,7 @@ version = "0.1.0"
 
 [tasks]
 lab-terminal = { cmd = "jupyter lab", description = "Jupyter lab added from terminal" }
+start = { depends-on = ["lab"], description = "Depends on Lab" }
 
 [tasks.lab]
 description = "Launch JupyterLab"
