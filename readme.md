@@ -49,3 +49,7 @@ When there are changes, we need to install
 
 After tasks are completed, it is easy to see what there is to do with this project:
 ```pixi task list```
+
+## Global Tools
+
+
