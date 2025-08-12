@@ -20,5 +20,7 @@ You can also:
 - add additional dependencies
 ```pixi add numpy notebook jpyterlab```
 - add a *task* (*pixi task add <task_command> <terminal_command>*)
-```pixi task add lab "jupyter lab" --description "Launch JupyterLab"
+```pixi task add lab "jupyter lab" --description "Launch JupyterLab"```
 
+When there are changes, we need to install
+```pixi install```
