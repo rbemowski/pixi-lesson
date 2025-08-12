@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Ryan Bemowski <rbemowski@wisc.edu>"]
+channels = ["conda-forge"]
+name = "august_workshop"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.5,<3.14"
