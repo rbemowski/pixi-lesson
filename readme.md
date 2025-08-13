@@ -50,6 +50,15 @@ When there are changes, we need to install
 After tasks are completed, it is easy to see what there is to do with this project:
 ```pixi task list```
 
-## Global Tools
+## CUDA
 
-
+- Adding a system requirement
+```pixi workspace system-requirement add cuda 12```
+- Setting up cuda for linux only (add cuda to the platform linux-64)
+```pixi add --platform linux-64 cuda```
+- Get pytorch (get gpu for linux)
+```pixi add pytorch-gpu --platform linux-64```
+- Fake as if I have cuda (run whatever command, like *pixi add pytorch-gpu*)
+```CONDA_OVERRIDE_CUDA=12 pixi info```
+- Get pytorch cpu for all other platforms
+```pixi add pytorch-cpu``
