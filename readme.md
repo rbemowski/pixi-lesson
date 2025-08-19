@@ -53,7 +53,7 @@ After tasks are completed, it is easy to see what there is to do with this proje
 ## CUDA
 
 - Adding a system requirement
-```pixi workspace system-requirement add cuda 12```
+```pixi workspace system-requirements add cuda 12```
 - Setting up cuda for linux only (add cuda to the platform linux-64)
 ```pixi add --platform linux-64 cuda```
 - Get pytorch (get gpu for linux)
@@ -61,4 +61,25 @@ After tasks are completed, it is easy to see what there is to do with this proje
 - Fake as if I have cuda (run whatever command, like *pixi add pytorch-gpu*)
 ```CONDA_OVERRIDE_CUDA=12 pixi info```
 - Get pytorch cpu for all other platforms
-```pixi add pytorch-cpu``
+```pixi add pytorch-cpu```
+
+## The CUDA environment challenge
+
+- Init
+```pixi workspace platform add linux-64 osx-arm64 win-64```
+- Add python
+```pixi add python```
+- Add a feature that includes pytorch (do not add directly, add a feature)
+```pixi add --feature cpu pytorch-cpu```
+- Creat the environment for pythorc cpu feature
+```pixi workspace environment add cpu --feature cpu```
+- Update the toml with versions and lock file
+```pixi upgrade --feature cpu```
+- Create a feature for gpu with a cuda requirement
+```pixi workspace system-requirements add cuda 12 --feature gpu```
+- Create the environment
+```pixi workspace environment add gpu --feature gpu```
+- Update the toml with versiond and lock file
+```pixi upgrade --feature gpu```
+- Add the pycharm-gpu to linux and windows
+```pixi add pytorch-gpu --platform linux-64 --platform win-64 --feature gpu```
